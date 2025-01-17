@@ -1,44 +1,54 @@
 /* General Body Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #09122C; /* Navy background */
-  color: #ffffff;
+  font-family: 'PT Serif', serif; /* Apply the chosen font */
+  background-color: #0D1B2A; /* Navy blue background */
+  color: #E0E1DD; /* Light grey for better contrast */
   margin: 0;
   padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Ensure consistent sizing */
 }
 
-/* Full-Screen Stopwatch Container */
+
+
+/* Stopwatch Container */
 .container {
   text-align: center;
-  background: #1A1B41; /* Deep purple for stopwatch */
-  padding: 50px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  width: 80%; /* Take up 80% of the width */
-  max-width: 600px; /* Limit to 600px for larger screens */
-  height: 80%; /* Expand to occupy most of the height */
+  background: #1B263B; /* Navy blue background */
+  padding: 80px; /* Internal padding for spacing */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  width: 1200px; /* Explicit fixed width for a wider box */
+  max-width: 95%; /* Prevent overflow on small screens */
+  height: auto; /* Dynamic height based on content */
+  min-height: 600px; /* Maintain a moderate minimum height */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out content */
+  justify-content: space-between; /* Space out children evenly */
+  margin: 0 auto; /* Center horizontally */
+  box-sizing: border-box; /* Consistent box sizing */
 }
 
-/* Stopwatch Title */
+
+
+/* Title */
 h1 {
-  font-size: 3rem; /* Larger title */
-  color: #E17564;
-  margin-bottom: 20px;
+  font-family: 'PT Serif', serif; /* Apply PT Serif to the title */
+  font-size: 1.5rem;
+  color: #A3C4F3; /* Muted sky blue for a soft tone */
+  margin-bottom: 15px;
+  font-weight: 500; /* Slightly bold for prominence */
 }
 
-/* Stopwatch Timer */
+/* Timer */
 h2 {
-  font-size: 3rem; /* Bigger timer display */
-  color: #FFFFFF; /* White for visibility */
-  margin: 0;
-  animation: pulse 1s infinite; /* Subtle pulse effect */
+  font-size: 2.5rem; /* Balanced size for readability */
+  color: #F4A261; /* Soft orange for emphasis */
+  margin: 20px 0;
+  animation: none; /* Remove animation if not preferred */
 }
 
 /* Button Group */
@@ -53,16 +63,16 @@ button.circular {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px; /* Larger buttons */
+  width: 80px; /* Adjust for balance */
   height: 80px;
   border-radius: 50%;
   border: none;
-  font-size: 1.2rem; /* Bigger text */
+  font-size: 1.1rem; /* Adjust font size */
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
   text-align: center;
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button.circular:disabled {
@@ -72,54 +82,61 @@ button.circular:disabled {
 }
 
 button.circular:not(:disabled):hover {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Slight enlargement */
 }
 
-/* Button Colors */
+/* Start Button */
 button.start {
-  background-color: #4CAF50; /* Green for start */
-  color: white;
+  background: linear-gradient(135deg, #2A9D8F, #48C9B0); /* Gradient for modern look */
+  color: #ffffff;
 }
 
 button.start:hover {
-  background-color: #81C784;
+  background: linear-gradient(135deg, #48C9B0, #2A9D8F); /* Reverse gradient on hover */
 }
 
+/* Split Button */
 button.split {
-  background-color: #2196F3; /* Blue for split */
-  color: white;
+  background: linear-gradient(135deg, #E76F51, #F4A261); /* Gradient for split */
+  color: #ffffff;
 }
 
 button.split:hover {
-  background-color: #64B5F6;
+  background: linear-gradient(135deg, #F4A261, #E76F51); /* Reverse gradient */
 }
 
+/* Reset Button */
 button.reset {
-  background-color: #F44336; /* Red for reset */
-  color: white;
+  background: linear-gradient(135deg, #264653, #2A9D8F); /* Gradient for reset */
+  color: #ffffff;
 }
 
 button.reset:hover {
-  background-color: #EF9A9A;
+  background: linear-gradient(135deg, #2A9D8F, #264653); /* Reverse gradient */
 }
 
 /* Splits List */
 .splits {
   margin-top: 20px;
-  padding: 10px;
+  padding: 15px;
   list-style-type: none;
-  max-height: 300px; /* Constrain height */
+  max-height: 200px; /* Constrain height */
   overflow-y: auto; /* Add vertical scrolling */
-  background: #2E3A59;
+  background: #1B263B; /* Match container background */
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .splits li {
-  background: #3A4462;
+  background: #2E3A59; /* Slightly lighter tone */
   padding: 10px;
   margin: 5px 0;
   border-radius: 5px;
-  font-size: 1.2rem;
-  color: #ffffff;
+  font-size: 1rem;
+  color: #E0E1DD;
+  border-left: 4px solid #A3C4F3; /* Add a subtle colored bar for distinction */
+}
+
+.splits li:nth-child(even) {
+  background: #3A4462; /* Alternating background for better readability */
 }
